@@ -1,0 +1,22 @@
+{
+  "name": "pis-frontend",
+  "version": "1.0.0",
+  "description": "frontend component for pis project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkMarcin/pis-frontend.git"
+  },
+  "author": "Team MMMM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SkMarcin/pis-frontend/issues"
+  },
+  "homepage": "https://github.com/SkMarcin/pis-frontend#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  }
+}
