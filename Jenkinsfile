@@ -1,15 +1,17 @@
-pipeline {
+{
     agent any
     stages {
         stage('Dependencies') {
             steps {
-                sh 'npm install'
+                dir('pis-frontend') {
+                    sh 'npm install'
+                }
             }
         }
         stage('Build') {
             steps {
                 dir('pis-frontend') {
-                    sh 'npm start'
+                    sh 'npm run build'
                 }
             }
         }
