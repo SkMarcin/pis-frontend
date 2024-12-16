@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build and Smoke Test') {
             steps {
-                script {}
+                script {
                     sh 'npm start &'
                     sleep 20
 
