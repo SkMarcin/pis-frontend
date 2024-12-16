@@ -16,9 +16,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            sh 'pkill -f "node"' // Ensure any background servers are terminated
-        }
-    }
 }
