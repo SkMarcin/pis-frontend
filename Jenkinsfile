@@ -1,17 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
-        stage('Build Frontend') {
-            steps {
-                sh 'npm run build' // Ensures the app builds correctly
-            }
-        }
-        stage('Smoke Test') {
+        stage(' Build and Smoke Test') {
             steps {
                 script {
                     // Start the server in the background
