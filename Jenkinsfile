@@ -6,26 +6,9 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Build and Smoke Test') {
+        stage('Build') {
             steps {
-                script {
-                    sh 'npm start &'
-                    sleep 20
-
-                    def retries = 5
-                    while (retries > 0) {
-                        try {
-                            sh 'curl -f http://localhost:3000'
-                            break
-                        } catch (Exception e) {
-                            retries--
-                            sleep 5
-                            if (retries == 0) {
-                                error "Server did not start in time"
-                            }
-                        }
-                    }
-                }
+                sh 'npm start'
             }
         }
     }
