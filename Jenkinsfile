@@ -8,8 +8,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd pis-frontend'
-                sh 'npm start'
+                dir('pis-frontend') {
+                    sh 'npm start'
+                }
             }
         }
     }
