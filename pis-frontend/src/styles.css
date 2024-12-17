@@ -9,13 +9,71 @@ body {
     background-color: #f4f4f9;
 }
 
-header {
+/* Navigation Container */
+.navigation {
     background-color: #6200ea;
     color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.nav-header {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.header-link {
+    text-decoration: none;
+    color: white;
+}
+
+.header-link h1 {
+    margin: 0;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+/* Buttons Container */
+.nav-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-auth {
+    margin-left: auto; /* Pushes login/logout button to the far right */
+}
+
+.nav-btn {
+    text-decoration: none;
+    background-color: #3700b3;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #31009e;
+}
+
+.login-btn, .logout-btn {
+    background-color: #03dac6;
+    color: #000;
+}
+
+.login-btn:hover, .logout-btn:hover {
+    background-color: #00c4b4;
+}
+
 
 /* Form Styles */
 .form-container {

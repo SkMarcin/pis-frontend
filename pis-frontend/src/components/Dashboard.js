@@ -11,7 +11,6 @@ const Dashboard = () => {
         <div>
             <h1>Welcome, {user.email}</h1>
             <p>Your role: {user.role}</p>
-            <button onClick={logout}>Log Out</button>
         </div>
     );
 };
