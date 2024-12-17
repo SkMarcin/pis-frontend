@@ -1,0 +1,159 @@
+/* General Styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Navigation Container */
+.navigation {
+    background-color: #6200ea;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-header {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.header-link {
+    text-decoration: none;
+    color: white;
+}
+
+.header-link h1 {
+    margin: 0;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+/* Buttons Container */
+.nav-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-auth {
+    margin-left: auto; /* Pushes login/logout button to the far right */
+}
+
+.nav-btn {
+    text-decoration: none;
+    background-color: #3700b3;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #31009e;
+}
+
+.login-btn, .logout-btn {
+    background-color: #03dac6;
+    color: #000;
+}
+
+.login-btn:hover, .logout-btn:hover {
+    background-color: #00c4b4;
+}
+
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px; /* Consistent padding */
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+    line-height: 1.2; /* Ensures consistent height alignment */
+    appearance: none; /* For consistent rendering of select in different browsers */
+}
+
+.form-container select {
+    height: 42px; /* Match the exact height of input boxes */
+    padding: 9px 10px; /* Fine-tune padding for better alignment */
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #3700b3;
+}
+
+.signup-link {
+    text-align: center;
+}
+
+.signup-link p {
+    margin-bottom: 5px;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.dashboard-container h1 {
+    margin-bottom: 20px;
+    color: #6200ea;
+}
+
+.dashboard-container p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.dashboard-container a.nav-btn {
+    display: inline-block;
+    margin-top: 20px;
+}
+

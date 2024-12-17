@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
+import '../styles.css'
 
 const Dashboard = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     if (!user) return <p>Please log in to view the dashboard.</p>;
 
@@ -10,7 +11,6 @@ const Dashboard = () => {
         <div>
             <h1>Welcome, {user.email}</h1>
             <p>Your role: {user.role}</p>
-            <button onClick={logout}>Log Out</button>
         </div>
     );
 };
