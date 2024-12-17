@@ -26,17 +26,18 @@ const Login = () => {
                 type="email"
                 placeholder="Email"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
                 required
             />
             <input
                 type="password"
-                placeholder="Password"
+                placeholder="Hasło"
                 value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
                 required
             />
-            <button type="submit">Log In</button>
+            <button type="submit">Zaloguj</button>
+            <p><a href="/signup">Zarejestruj użytkownika</a></p>
         </form>
     );
 };

@@ -18,7 +18,7 @@ const Signup = () => {
 
     return (
         <form onSubmit={handleSubmit} className="form-container">
-            <h2>Sign Up</h2>
+            <h2>Podaj dane konta</h2>
             <input
                 type="email"
                 placeholder="Email"
@@ -28,7 +28,7 @@ const Signup = () => {
             />
             <input
                 type="password"
-                placeholder="Password"
+                placeholder="Hasło"
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
                 required
@@ -41,7 +41,7 @@ const Signup = () => {
                 <option value="czytelnik">Czytelnik</option>
                 <option value="bibliotekarz">Bibliotekarz</option>
             </select>
-            <button type="submit">Sign Up</button>
+            <button type="submit">Zarejestruj</button>
             <p>{message}</p>
         </form>
     );

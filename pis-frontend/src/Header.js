@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import AuthContext from './context/AuthContext';
 import './styles.css'
 
 const Navigation = () => {
     const { user, logout } = useContext(AuthContext);
+    const location = useLocation();
 
     return (
         <nav className="navigation">
@@ -28,7 +29,9 @@ const Navigation = () => {
                     {user ? (
                         <button onClick={logout} className="nav-btn logout-btn">Wyloguj</button>
                     ) : (
-                        <Link to="/login" className="nav-btn login-btn">Zaloguj się</Link>
+                        location.pathname !== "/login" && (
+                            <Link to="/login" className="nav-btn login-btn">Zaloguj się</Link>
+                        )
                     )}
                 </div>
             </div>
