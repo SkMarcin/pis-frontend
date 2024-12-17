@@ -3,7 +3,7 @@ import AuthContext from '../context/AuthContext';
 import '../styles.css'
 
 const Dashboard = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     if (!user) return <p>Please log in to view the dashboard.</p>;
 
