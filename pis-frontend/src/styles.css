@@ -1,0 +1,101 @@
+/* General Styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px; /* Consistent padding */
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+    line-height: 1.2; /* Ensures consistent height alignment */
+    appearance: none; /* For consistent rendering of select in different browsers */
+}
+
+.form-container select {
+    height: 42px; /* Match the exact height of input boxes */
+    padding: 9px 10px; /* Fine-tune padding for better alignment */
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #3700b3;
+}
+
+.signup-link {
+    text-align: center;
+}
+
+.signup-link p {
+    margin-bottom: 5px;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.dashboard-container h1 {
+    margin-bottom: 20px;
+    color: #6200ea;
+}
+
+.dashboard-container p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.dashboard-container a.nav-btn {
+    display: inline-block;
+    margin-top: 20px;
+}
+
