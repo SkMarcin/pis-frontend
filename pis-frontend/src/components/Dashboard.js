@@ -5,12 +5,12 @@ import '../styles.css'
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
 
-    if (!user) return <p>Please log in to view the dashboard.</p>;
+    if (!user) return <p>Zaloguj się, żeby wyświetlić opcje.</p>;
 
     return (
         <div>
-            <h1>Welcome, {user.email}</h1>
-            <p>Your role: {user.role}</p>
+            <h1>Witaj, {user.email}</h1>
+            <p>Twoja rola: {user.role}</p>
         </div>
     );
 };
