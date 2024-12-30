@@ -50,6 +50,7 @@ pipeline {
                                  file: "build.tar.gz",
                                  type: "tar.gz"]
                             ]
+                        )
                     }
                 }
             }
