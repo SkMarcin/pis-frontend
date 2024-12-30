@@ -25,6 +25,11 @@ pipeline {
             }
         }
         stage('Docker Build and Deploy') {
+            when {
+                expression {
+                    env.GIT_BRANCH == 'origin/main'
+                }
+            }
             steps {
                 dir('pis-frontend') {
                     script {
