@@ -28,8 +28,8 @@ WORKDIR /app
 # Copy the built files from the builder stage
 COPY --from=builder /app/build ./build
 
-EXPOSE 3001
+EXPOSE 3000
 
 # Serve the application
-CMD ["serve", "-s", "build", "-l", "3001"]
+CMD ["serve", "-s", "build", "-l", "3000"]
 
