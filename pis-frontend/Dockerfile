@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the application
-RUN npm run build
+RUN REACT_APP_API_BASE_URL=http://192.168.162.223:8180 npm run build
 
 # Stage 2: Serve the React app with "serve"
 FROM node:18-alpine

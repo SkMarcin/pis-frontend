@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8180';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8180';
 
 export const signup = async (data) => {
     return await axios.post(`${API_BASE_URL}/auth/signup`, data);
