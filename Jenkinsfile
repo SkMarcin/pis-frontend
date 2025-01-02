@@ -25,11 +25,11 @@ pipeline {
             }
         }
         stage('Docker Build and Deploy') {
-//             when {
-//                 expression {
-//                     env.GIT_BRANCH == 'origin/main'
-//                 }
-//             }
+            when {
+                expression {
+                    env.GIT_BRANCH == 'origin/main'
+                }
+            }
             steps {
                 dir('pis-frontend') {
                     script {
@@ -39,23 +39,23 @@ pipeline {
 
                         sh "docker run -d --name ${DOCKER_IMAGE} --network shared-network -p 3000:3000 ${DOCKER_IMAGE}:${DOCKER_TAG}"
 
-//                         sh "tar -czvf build.tar.gz build/"
-//
-//                         nexusArtifactUploader(
-//                             nexusVersion: NEXUS_VERSION,
-//                             protocol: NEXUS_PROTOCOL,
-//                             nexusUrl: NEXUS_URL,
-//                             groupId: "com.example.frontend",
-//                             version: "${env.BUILD_NUMBER}",
-//                             repository: NEXUS_REPOSITORY,
-//                             credentialsId: NEXUS_CREDENTIAL_ID,
-//                             artifacts: [
-//                                 [artifactId: "frontend-build",
-//                                  classifier: '',
-//                                  file: "build.tar.gz",
-//                                  type: "tar.gz"]
-//                             ]
-//                         )
+                        sh "tar -czvf build.tar.gz build/"
+
+                        nexusArtifactUploader(
+                            nexusVersion: NEXUS_VERSION,
+                            protocol: NEXUS_PROTOCOL,
+                            nexusUrl: NEXUS_URL,
+                            groupId: "com.example.frontend",
+                            version: "${env.BUILD_NUMBER}",
+                            repository: NEXUS_REPOSITORY,
+                            credentialsId: NEXUS_CREDENTIAL_ID,
+                            artifacts: [
+                                [artifactId: "frontend-build",
+                                 classifier: '',
+                                 file: "build.tar.gz",
+                                 type: "tar.gz"]
+                            ]
+                        )
                     }
                 }
             }
