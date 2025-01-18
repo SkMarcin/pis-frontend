@@ -16,7 +16,7 @@ const UsersPage = () => {
                 const data = await response.json();
                 setUsers(data);
             } else {
-                console.error("Error fetching users:", err);
+                console.error("Error fetching users:");
                 setError("Nie udało się załadować użytkowników.");
             }
         };
