@@ -5,12 +5,19 @@ import '../styles.css';
 const UsersPage = () => {
     const { user } = useContext(AuthContext);
     const [users, setUsers] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('/api/users');
-            const data = await response.json();
-            setUsers(data);
+            try {
+                const response = await fetch('/api/users');
+                if (!response.ok) throw new Error("Failed to fetch users.");
+                const data = await response.json();
+                setUsers(data);
+            } catch (err) {
+                console.error("Error fetching users:", err);
+                setError("Nie udało się załadować użytkowników.");
+            }
         };
 
         fetchUsers();
@@ -36,37 +43,47 @@ const UsersPage = () => {
     return (
         <div className="users-page">
             <h2>Zarządzanie Użytkownikami</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Imię</th>
-                    <th>Email</th>
-                    <th>Rola</th>
-                    {user.role !== "Reader" && <th>Akcje</th>}
-                </tr>
-                </thead>
-                <tbody>
-                {filteredUsers.map((u) => (
-                    <tr key={u.id}>
-                        <td>{u.id}</td>
-                        <td>{u.name}</td>
-                        <td>{u.email}</td>
-                        <td>{u.role}</td>
-                        {user.role !== "Reader" && (
-                            <td>
-                                <button
-                                    onClick={() => handleDelete(u.id)}
-                                    className="delete-btn"
-                                >
-                                    Usuń
-                                </button>
-                            </td>
-                        )}
+            <button
+                onClick={() => navigate('/users/add')}
+                className="add-btn"
+            >
+                Dodaj użytkownika
+            </button>
+            {error ? (
+                <p className="error-message">{error}</p>
+            ) : (
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imię</th>
+                        <th>Email</th>
+                        <th>Rola</th>
+                        {user.role !== "Reader" && <th>Akcje</th>}
                     </tr>
-                ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {filteredUsers.map((u) => (
+                        <tr key={u.id}>
+                            <td>{u.id}</td>
+                            <td>{u.name}</td>
+                            <td>{u.email}</td>
+                            <td>{u.role}</td>
+                            {user.role !== "Reader" && (
+                                <td>
+                                    <button
+                                        onClick={() => handleDelete(u.id)}
+                                        className="delete-btn"
+                                    >
+                                        Usuń
+                                    </button>
+                                </td>
+                            )}
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            )}
         </div>
     );
 };

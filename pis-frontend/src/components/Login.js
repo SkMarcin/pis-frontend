@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../utils/api';
 import AuthContext from '../context/AuthContext';
@@ -8,6 +8,12 @@ const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const { login: loginUser } = useContext(AuthContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user) {
+            navigate('/dashboard'); // Redirect to dashboard if already logged in
+        }
+    }, [user, navigate]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
