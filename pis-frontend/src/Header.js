@@ -18,10 +18,11 @@ const Navigation = () => {
                 <div className="nav-buttons">
                     {user ? (
                         <>
-                            <Link to="/uzytkownicy" className="nav-btn">Użytkownicy</Link>
-                            <Link to="/wypozyczenia" className="nav-btn">Wypożyczenia</Link>
-                            <Link to="/rezerwacje" className="nav-btn">Rezerwacje</Link>
-                            <Link to="/ksiegozbior" className="nav-btn">Księgozbiór</Link>
+                        {user.role !== "czytelnik" && (
+                            <Link to="/users" className="nav-btn">Użytkownicy</Link>
+                        )}
+                        <Link to="/wypozyczenia" className="nav-btn">Wypożyczenia</Link>
+                        <Link to="/ksiegozbior" className="nav-btn">Księgozbiór</Link>
                         </>
                     ) : null}
                 </div>
