@@ -3,7 +3,7 @@ import { signup } from '../utils/api';
 import '../styles.css'
 
 const Signup = () => {
-    const [formData, setFormData] = useState({ email: '', password: '', role: 'czytelnik' });
+    const [formData, setFormData] = useState({ email: '', password: '', role: 'reader' });
     const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
@@ -38,8 +38,9 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, role: e.target.value})}
                 required
             >
-                <option value="czytelnik">Czytelnik</option>
-                <option value="bibliotekarz">Bibliotekarz</option>
+                <option value="reader">Czytelnik</option>
+                <option value="librarian">Bibliotekarz</option>
+                <option value="admin">Admin</option>
             </select>
             <button type="submit">Zarejestruj</button>
             <p>{message}</p>
