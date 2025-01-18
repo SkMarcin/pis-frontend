@@ -6,6 +6,7 @@ import '../styles.css'
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
+    const { user } = useContext(AuthContext);
     const { login: loginUser } = useContext(AuthContext);
     const navigate = useNavigate();
 

@@ -1,22 +1,27 @@
 import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
 import '../styles.css';
+import {useNavigate} from "react-router-dom";
 
 const UsersPage = () => {
     const { user } = useContext(AuthContext);
     const [users, setUsers] = useState([]);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const response = await fetch('/api/users');
-                if (!response.ok) throw new Error("Failed to fetch users.");
-                const data = await response.json();
-                setUsers(data);
+                if (response.ok) {
+                    const data = await response.json();
+                    setUsers(data);
+                } else {
+                    console.error("Error fetching users:", err);
+                    setError("Nie udało się załadować użytkowników.");
+                }
             } catch (err) {
-                console.error("Error fetching users:", err);
-                setError("Nie udało się załadować użytkowników.");
+
             }
         };
 
