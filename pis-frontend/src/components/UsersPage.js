@@ -11,17 +11,13 @@ const UsersPage = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            try {
-                const response = await fetch('/api/users');
-                if (response.ok) {
-                    const data = await response.json();
-                    setUsers(data);
-                } else {
-                    console.error("Error fetching users:", err);
-                    setError("Nie udało się załadować użytkowników.");
-                }
-            } catch (err) {
-
+            const response = await fetch('/api/users');
+            if (response.ok) {
+                const data = await response.json();
+                setUsers(data);
+            } else {
+                console.error("Error fetching users:", err);
+                setError("Nie udało się załadować użytkowników.");
             }
         };
 
