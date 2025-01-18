@@ -3,7 +3,7 @@ import { signup } from '../utils/api';
 import '../styles.css'
 
 const Signup = () => {
-    const [formData, setFormData] = useState({ email: '', password: '', role: 'reader' });
+    const [formData, setFormData] = useState({ email: '', password: '', role: 'Reader' });
     const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {

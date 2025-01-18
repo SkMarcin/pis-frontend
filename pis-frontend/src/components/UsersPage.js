@@ -17,8 +17,8 @@ const UsersPage = () => {
     }, []);
 
     const filteredUsers = users.filter((u) => {
-        if (user.role === "admin") return true;
-        if (user.role === "librarian") return u.role === "reader";
+        if (user.role === "Admin") return true;
+        if (user.role === "Librarian") return u.role === "Reader";
         return false;
     });
 
@@ -43,7 +43,7 @@ const UsersPage = () => {
                     <th>Imię</th>
                     <th>Email</th>
                     <th>Rola</th>
-                    {user.role !== "reader" && <th>Akcje</th>}
+                    {user.role !== "Reader" && <th>Akcje</th>}
                 </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,7 @@ const UsersPage = () => {
                         <td>{u.name}</td>
                         <td>{u.email}</td>
                         <td>{u.role}</td>
-                        {user.role !== "reader" && (
+                        {user.role !== "Reader" && (
                             <td>
                                 <button
                                     onClick={() => handleDelete(u.id)}
