@@ -38,9 +38,9 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, role: e.target.value})}
                 required
             >
-                <option value="reader">Czytelnik</option>
-                <option value="librarian">Bibliotekarz</option>
-                <option value="admin">Admin</option>
+                <option value="Reader">Czytelnik</option>
+                <option value="Librarian">Bibliotekarz</option>
+                <option value="Admin">Admin</option>
             </select>
             <button type="submit">Zarejestruj</button>
             <p>{message}</p>

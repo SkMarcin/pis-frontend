@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Navigation from "./Header";
+import UsersPage from "./components/UsersPage";
 import './styles.css'
 
 const App = () => (
@@ -15,7 +16,7 @@ const App = () => (
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
-                <Route path="/users" element={<Dashboard/>}/>
+                <Route path="/users" element={<UsersPage/>}/>
             </Routes>
         </Router>
     </AuthProvider>
