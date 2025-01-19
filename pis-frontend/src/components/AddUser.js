@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
+import AuthContext from "../context/AuthContext";
+import './users.css'
 
 const AddUser = () => {
+    const { user } = useContext(AuthContext);
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -14,61 +17,54 @@ const AddUser = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:8180/api/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-            if (!response.ok) {
-                throw new Error(`Nie udało się dodać użytkownika: ${response.statusText}`);
-            }
-            alert('User added successfully!');
+        const response = await fetch('http://localhost:8180/api/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+        if (!response.ok) {
+            alert('Użytkownik dodany pomyślnie!');
             setFormData({ email: '', password: '', role: 'Reader' });
-        } catch (error) {
-            alert(error.message);
+        } else {
+            alert(`Nie udało się dodać użytkownika: ${response.statusText}`);
         }
     };
 
     return (
         <div>
             <h2>Add User</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Email:
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    Hasło:
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label>
-                    Role:
-                    <select name="role" value={formData.role} onChange={handleChange}>
-                        <option value="Reader">Czytelnik</option>
-                        <option value="Librarian">Bibliotekarz</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-                </label>
-                <br />
+            <form onSubmit={handleSubmit} className="form-container">
+                <h2>Dodaj użytkownika</h2>
+                <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Hasło"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                />
+                <select name="role" value={formData.role} onChange={handleChange} required>
+                    <option value="Reader">Czytelnik</option>
+                    {user.role === "Admin" && (
+                        <>
+                            <option value="Librarian">Bibliotekarz</option>
+                            <option value="Admin">Admin</option>
+                        </>
+                    )}
+                </select>
                 <button type="submit">Dodaj użytkownika</button>
             </form>
+
         </div>
     );
 };

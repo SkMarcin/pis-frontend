@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
-import '../styles.css';
+import '../users.css';
 import {useNavigate} from "react-router-dom";
 
 const UsersPage = () => {
@@ -46,14 +46,14 @@ const UsersPage = () => {
             <h2>Zarządzanie Użytkownikami</h2>
             <button
                 onClick={() => navigate('/users/add')}
-                className="add-btn"
+                className="btn btn-primary"
             >
                 Dodaj użytkownika
             </button>
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
-                <table>
+                <table className="styled-table">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -64,24 +64,32 @@ const UsersPage = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {filteredUsers.map((u) => (
-                        <tr key={u.id}>
-                            <td>{u.id}</td>
-                            <td>{u.name}</td>
-                            <td>{u.email}</td>
-                            <td>{u.role}</td>
-                            {user.role !== "Reader" && (
-                                <td>
-                                    <button
-                                        onClick={() => handleDelete(u.id)}
-                                        className="delete-btn"
-                                    >
-                                        Usuń
-                                    </button>
-                                </td>
-                            )}
+                    {filteredUsers.length === 0 ? (
+                        <tr>
+                            <td colSpan="5" className="empty-message">
+                                Brak użytkowników do wyświetlenia.
+                            </td>
                         </tr>
-                    ))}
+                    ) : (
+                        filteredUsers.map((u) => (
+                            <tr key={u.id}>
+                                <td>{u.id}</td>
+                                <td>{u.name}</td>
+                                <td>{u.email}</td>
+                                <td>{u.role}</td>
+                                {user.role !== "Reader" && (
+                                    <td>
+                                        <button
+                                            onClick={() => handleDelete(u.id)}
+                                            className="btn btn-danger"
+                                        >
+                                            Usuń
+                                        </button>
+                                    </td>
+                                )}
+                            </tr>
+                        ))
+                    )}
                     </tbody>
                 </table>
             )}
