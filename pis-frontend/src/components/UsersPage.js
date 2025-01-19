@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
-import '../users.css';
+import './users.css';
 import {useNavigate} from "react-router-dom";
 
 const UsersPage = () => {
