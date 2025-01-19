@@ -9,7 +9,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <h1>Witaj, {user.email}</h1>
+            <h2>Witaj, {user.email}</h2>
             <p>Twoja rola: {user.role}</p>
         </div>
     );
