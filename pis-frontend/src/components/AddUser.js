@@ -10,11 +10,6 @@ const AddUser = () => {
         role: 'Reader', // Default role
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch('http://localhost:8180/api/users', {
@@ -33,41 +28,35 @@ const AddUser = () => {
     };
 
     return (
-        <nav className="add-users">
-            <div>
-                <h2>Dodawanie użytkownika</h2>
-                <form onSubmit={handleSubmit} className="form-container">
-                    <h2>Dodaj użytkownika</h2>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="password"
-                        placeholder="Hasło"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                    <select name="role" value={formData.role} onChange={handleChange} required>
-                        <option value="Reader">Czytelnik</option>
-                        {user.role === "Admin" && (
-                            <>
-                                <option value="Librarian">Bibliotekarz</option>
-                                <option value="Admin">Admin</option>
-                            </>
-                        )}
-                    </select>
-                    <button type="submit">Dodaj użytkownika</button>
-                </form>
-            </div>
-        </nav>
+        <form onSubmit={handleSubmit} className="form-container">
+            <h2>Dodaj Użytkownika</h2>
+            <input
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+            />
+            <input
+                type="password"
+                placeholder="Hasło"
+                value={formData.password}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                required
+            />
+            <select
+                value={formData.role}
+                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                required
+            >
+                <option value="Reader">Czytelnik</option>
+                {user.role === "Admin" && <option value="Librarian">Bibliotekarz</option>}
+                {user.role === "Admin" && <option value="Admin">Admin</option>}
+            </select>
+            <button type="submit">Dodaj użytkownika</button>
+        </form>
     );
+
 };
 
 export default AddUser;

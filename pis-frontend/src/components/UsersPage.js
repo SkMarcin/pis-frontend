@@ -42,18 +42,18 @@ const UsersPage = () => {
     };
 
     return (
-        <div className="users-page">
+        <div className="dashboard-container users-page">
             <h2>Zarządzanie Użytkownikami</h2>
             <button
                 onClick={() => navigate('/users/add')}
-                className="btn btn-primary"
+                className="nav-btn"
             >
                 Dodaj użytkownika
             </button>
             {error ? (
                 <p className="error-message">{error}</p>
             ) : (
-                <table className="styled-table">
+                <table>
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -64,37 +64,30 @@ const UsersPage = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {filteredUsers.length === 0 ? (
-                        <tr>
-                            <td colSpan="5" className="empty-message">
-                                Brak użytkowników do wyświetlenia.
-                            </td>
+                    {filteredUsers.map((u) => (
+                        <tr key={u.id}>
+                            <td>{u.id}</td>
+                            <td>{u.name}</td>
+                            <td>{u.email}</td>
+                            <td>{u.role}</td>
+                            {user.role !== "Reader" && (
+                                <td>
+                                    <button
+                                        onClick={() => handleDelete(u.id)}
+                                        className="delete-btn"
+                                    >
+                                        Usuń
+                                    </button>
+                                </td>
+                            )}
                         </tr>
-                    ) : (
-                        filteredUsers.map((u) => (
-                            <tr key={u.id}>
-                                <td>{u.id}</td>
-                                <td>{u.name}</td>
-                                <td>{u.email}</td>
-                                <td>{u.role}</td>
-                                {user.role !== "Reader" && (
-                                    <td>
-                                        <button
-                                            onClick={() => handleDelete(u.id)}
-                                            className="btn btn-danger"
-                                        >
-                                            Usuń
-                                        </button>
-                                    </td>
-                                )}
-                            </tr>
-                        ))
-                    )}
+                    ))}
                     </tbody>
                 </table>
             )}
         </div>
     );
+
 };
 
 export default UsersPage;
