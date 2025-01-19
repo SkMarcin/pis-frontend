@@ -33,39 +33,40 @@ const AddUser = () => {
     };
 
     return (
-        <div>
-            <h2>Add User</h2>
-            <form onSubmit={handleSubmit} className="form-container">
-                <h2>Dodaj użytkownika</h2>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Hasło"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <select name="role" value={formData.role} onChange={handleChange} required>
-                    <option value="Reader">Czytelnik</option>
-                    {user.role === "Admin" && (
-                        <>
-                            <option value="Librarian">Bibliotekarz</option>
-                            <option value="Admin">Admin</option>
-                        </>
-                    )}
-                </select>
-                <button type="submit">Dodaj użytkownika</button>
-            </form>
-
-        </div>
+        <nav className="add-users">
+            <div>
+                <h2>Dodawanie użytkownika</h2>
+                <form onSubmit={handleSubmit} className="form-container">
+                    <h2>Dodaj użytkownika</h2>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Hasło"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <select name="role" value={formData.role} onChange={handleChange} required>
+                        <option value="Reader">Czytelnik</option>
+                        {user.role === "Admin" && (
+                            <>
+                                <option value="Librarian">Bibliotekarz</option>
+                                <option value="Admin">Admin</option>
+                            </>
+                        )}
+                    </select>
+                    <button type="submit">Dodaj użytkownika</button>
+                </form>
+            </div>
+        </nav>
     );
 };
 

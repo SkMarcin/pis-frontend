@@ -4,6 +4,11 @@ body, h1, p {
     padding: 0;
 }
 
+h2 {
+    margin: 0;
+    padding: 20px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
