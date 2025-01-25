@@ -1,0 +1,74 @@
+.books-list-container, .book-details-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-input, .filter-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.books-table th, .books-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.books-table th {
+    background-color: #f2f2f2;
+}
+
+.books-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.details-link, .author-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.details-link:hover, .author-link:hover {
+    text-decoration: underline;
+}
+
+.create-link, .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: white;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-link:hover, .back-link:hover {
+    background-color: #218838;
+}
