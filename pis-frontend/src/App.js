@@ -8,6 +8,9 @@ import Navigation from "./Header";
 import UsersPage from "./components/UsersPage";
 import AddUser from "./components/AddUser";
 import NotFound from "./components/NotFound";
+import BooksList from "./components/books/BookList";
+import BookDetails from "./components/books/BookDetails";
+
 import './styles.css'
 
 const App = () => (
@@ -20,6 +23,8 @@ const App = () => (
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/users" element={<UsersPage/>}/>
                 <Route path="/users/add" element={<AddUser />} />
+                <Route path="/books" element={<BooksList />} />
+                <Route path="/books/:id" element={<BookDetails />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>

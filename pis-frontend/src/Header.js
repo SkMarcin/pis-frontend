@@ -22,7 +22,7 @@ const Navigation = () => {
                             <Link to="/users" className="nav-btn">Użytkownicy</Link>
                         )}
                         <Link to="/wypozyczenia" className="nav-btn">Wypożyczenia</Link>
-                        <Link to="/ksiegozbior" className="nav-btn">Księgozbiór</Link>
+                        <Link to="/books" className="nav-btn">Księgozbiór</Link>
                         </>
                     ) : null}
                 </div>
