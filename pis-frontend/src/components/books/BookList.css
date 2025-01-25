@@ -96,3 +96,25 @@ h1, h2 {
 .create-link:hover, .back-link:hover {
     background-color: #218838;
 }
+
+.delete-button {
+    background-color: #e63946; /* Czerwony, symbolizujący akcję usuwania */
+    color: #fff; /* Biały tekst dla kontrastu */
+    border: none; /* Usunięcie domyślnej ramki */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    padding: 8px 12px; /* Wewnętrzny odstęp dla lepszej czytelności */
+    font-size: 14px; /* Rozmiar tekstu */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Płynne animacje */
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #d62828; /* Ciemniejszy odcień czerwieni przy najechaniu */
+    transform: scale(1.05); /* Lekki efekt powiększenia */
+}
+
+.delete-button:active {
+    background-color: #b22222; /* Jeszcze ciemniejszy odcień czerwieni podczas kliknięcia */
+    transform: scale(0.95); /* Subtelny efekt "wciśnięcia" */
+}

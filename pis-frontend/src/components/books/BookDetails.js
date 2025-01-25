@@ -31,8 +31,8 @@ const BookDetails = () => {
                 <h3>Authors:</h3>
                 <ul>
                     {book.authors.map((author) => (
-                        <li key={author.id}>
-                            <Link to={`/authors/${author.id}`} className="author-link">{author.name} {author.lastName}</Link>
+                        <li>
+                            {author.name} {author.lastName}
                         </li>
                     ))}
                 </ul>

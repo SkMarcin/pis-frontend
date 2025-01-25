@@ -48,6 +48,25 @@ const BooksList = () => {
         setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
     };
 
+    const handleDelete = (bookId) => {
+        if (window.confirm('Are you sure you want to delete this book?')) {
+            fetch(`http://localhost:80/api/book-api/books/${bookId}/`, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
+                    } else {
+                        console.error('Failed to delete book');
+                    }
+                })
+                .catch((error) => console.error('Error deleting book:', error));
+        }
+    };
+
     return (
         <div className="books-list-container">
             <h1>Books List</h1>
@@ -110,6 +129,14 @@ const BooksList = () => {
                         <td>{book.category.name}</td>
                         <td>
                             <Link to={`/books/${book.id}`} className="details-link">Details</Link>
+                            {user && (user.role === 'ADMIN' || user.role === 'LIBRARIAN') && (
+                                <button
+                                    className="delete-button"
+                                    onClick={() => handleDelete(book.id)}
+                                >
+                                    Delete
+                                </button>
+                            )}
                         </td>
                     </tr>
                 ))}

@@ -10,6 +10,7 @@ import AddUser from "./components/AddUser";
 import NotFound from "./components/NotFound";
 import BooksList from "./components/books/BookList";
 import BookDetails from "./components/books/BookDetails";
+import BookCreate from "./components/books/BookCreate";
 
 import './styles.css'
 
@@ -25,6 +26,7 @@ const App = () => (
                 <Route path="/users/add" element={<AddUser />} />
                 <Route path="/books" element={<BooksList />} />
                 <Route path="/books/:id" element={<BookDetails />} />
+                <Route path="/books/create" element={<BookCreate />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
