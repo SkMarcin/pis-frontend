@@ -1,0 +1,97 @@
+.book-details-container {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Nagłówek książki */
+.book-header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
+}
+
+.book-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.book-header .category {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+}
+
+/* Opis książki */
+.description {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Sekcja autorów */
+.authors-section {
+    margin: 20px 0;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.authors-section h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+}
+
+.authors-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.authors-section li {
+    margin: 5px 0;
+}
+
+.author-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.author-link:hover {
+    text-decoration: underline;
+}
+
+/* Link powrotu */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-link:hover {
+    background: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

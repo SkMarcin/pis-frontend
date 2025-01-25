@@ -1,50 +1,73 @@
 .books-list-container, .book-details-container {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .filters {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .filter-input, .filter-select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 16px;
-    width: 100%;
+    flex: 1;
+    min-width: 200px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease;
+}
+
+.filter-input:focus, .filter-select:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 h1, h2 {
     color: #333;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .books-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 .books-table th, .books-table td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 15px;
     text-align: left;
 }
 
 .books-table th {
     background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
 }
 
 .books-table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
 }
 
 .details-link, .author-link {
@@ -59,14 +82,15 @@ h1, h2 {
 
 .create-link, .back-link {
     display: inline-block;
-    margin-bottom: 20px;
-    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #ffffff;
     background-color: #28a745;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-bottom: 20px;
 }
 
 .create-link:hover, .back-link:hover {

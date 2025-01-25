@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import './BooksPage.css';
+import './BookDetails.css';
 
 const BookDetails = () => {
     const { id } = useParams();
@@ -21,19 +21,23 @@ const BookDetails = () => {
     if (!book) return <div>Loading...</div>;
 
     return (
-        <div className="book-details">
-            <h2>{book.title}</h2>
-            <p>{book.description}</p>
-            <p>Category: {book.category.name}</p>
-            <h3>Authors:</h3>
-            <ul>
-                {book.authors.map((author) => (
-                    <li key={author.id}>
-                        <Link to={`/authors/${author.id}`}>{author.name} {author.lastName}</Link>
-                    </li>
-                ))}
-            </ul>
-            <Link to="/" className="back-link">Back to List</Link>
+        <div className="book-details-container">
+            <div className="book-header">
+                <h2>{book.title}</h2>
+                <p className="category">Category: {book.category.name}</p>
+            </div>
+            <p className="description">{book.description}</p>
+            <div className="authors-section">
+                <h3>Authors:</h3>
+                <ul>
+                    {book.authors.map((author) => (
+                        <li key={author.id}>
+                            <Link to={`/authors/${author.id}`} className="author-link">{author.name} {author.lastName}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <Link to="/books/" className="back-link">Back to List</Link>
         </div>
     );
 };
