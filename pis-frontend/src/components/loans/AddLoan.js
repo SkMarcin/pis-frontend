@@ -13,7 +13,7 @@ const AddLoan = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8007/api/loans", {
+            const response = await fetch("http://localhost:80/api/loans-api/loans", {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,

@@ -7,7 +7,7 @@ const UserLoans = () => {
 
     useEffect(() => {
         const fetchLoans = async () => {
-            const response = await fetch(`http://localhost:8007/api/loans/user/${userId}`);
+            const response = await fetch(`http://localhost:80/api/loans-api/loans/user/${userId}`);
             const data = await response.json();
             setLoans(data);
         };

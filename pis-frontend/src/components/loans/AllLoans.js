@@ -5,7 +5,7 @@ const AllLoans = () => {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        fetch('http://book-rent-api:/api/loans', {
+        fetch('http://localhost:80/api/loans-api/loans', {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

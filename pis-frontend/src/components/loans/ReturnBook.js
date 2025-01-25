@@ -7,7 +7,7 @@ const ReturnBook = () => {
 
     const handleReturn = async () => {
         try {
-            const response = await fetch(`http://localhost:8007/api/loans/return/${bookId}`, {
+            const response = await fetch(`http://localhost:80/api/loans-api/return/${bookId}`, {
                 method: "POST",
             });
             if (response.ok) {
