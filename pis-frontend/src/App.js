@@ -15,6 +15,8 @@ import BookCreate from "./components/books/BookCreate";
 import './styles.css'
 import CategoriesList from "./components/books/CategoryList";
 import AuthorsList from "./components/books/AuthorList";
+import CategoryCreate from "./components/books/CategoryCreate";
+import CreateAuthor from "./components/books/CreateAuthor";
 
 const App = () => (
     <AuthProvider>
@@ -31,6 +33,8 @@ const App = () => (
                 <Route path="/books/create" element={<BookCreate />} />
                 <Route path="/categories" element={<CategoriesList />} />
                 <Route path="/authors" element={<AuthorsList />} />
+                <Route path="/categories/create" element={<CategoryCreate />} />
+                <Route path="/authors/create" element={<CreateAuthor />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
