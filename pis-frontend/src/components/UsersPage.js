@@ -11,7 +11,7 @@ const UsersPage = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('/api/users');
+            const response = await fetch('http://localhost:80/api/users');
             if (response.ok) {
                 const data = await response.json();
                 setUsers(data);
@@ -43,12 +43,12 @@ const UsersPage = () => {
 
     return (
         <div className="dashboard-container users-page">
-            <h2>Zarządzanie Użytkownikami</h2>
+            <h2>User management</h2>
             <button
                 onClick={() => navigate('/users/add')}
                 className="nav-btn"
             >
-                Dodaj użytkownika
+                Add User
             </button>
             {error ? (
                 <p className="error-message">{error}</p>
@@ -57,9 +57,9 @@ const UsersPage = () => {
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Imię</th>
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Rola</th>
+                        <th>Role</th>
                         {user.role !== "Reader" && <th>Akcje</th>}
                     </tr>
                     </thead>

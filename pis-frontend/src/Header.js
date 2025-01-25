@@ -11,7 +11,7 @@ const Navigation = () => {
         <nav className="navigation">
             <div className="nav-header">
                 <Link to="/dashboard" className="header-link">
-                    <h1>System Biblioteczny</h1>
+                    <h1>Library system</h1>
                 </Link>
             </div>
             <div className="nav-buttons-container">
@@ -19,19 +19,19 @@ const Navigation = () => {
                     {user ? (
                         <>
                         {user.role !== "Reader" && (
-                            <Link to="/users" className="nav-btn">Użytkownicy</Link>
+                            <Link to="/users" className="nav-btn">Users</Link>
                         )}
-                        <Link to="/wypozyczenia" className="nav-btn">Wypożyczenia</Link>
-                        <Link to="/ksiegozbior" className="nav-btn">Księgozbiór</Link>
+                        <Link to="/loans/all-loans" className="nav-btn">Loans</Link>
+                        <Link to="/ksiegozbior" className="nav-btn">Books</Link>
                         </>
                     ) : null}
                 </div>
                 <div className="nav-auth">
                     {user ? (
-                        <button onClick={logout} className="nav-btn logout-btn">Wyloguj</button>
+                        <button onClick={logout} className="nav-btn logout-btn">Log out</button>
                     ) : (
                         location.pathname !== "/login" && (
-                            <Link to="/login" className="nav-btn login-btn">Zaloguj się</Link>
+                            <Link to="/login" className="nav-btn login-btn">Log in</Link>
                         )
                     )}
                 </div>

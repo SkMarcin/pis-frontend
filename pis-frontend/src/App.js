@@ -8,6 +8,11 @@ import Navigation from "./Header";
 import UsersPage from "./components/UsersPage";
 import AddUser from "./components/AddUser";
 import NotFound from "./components/NotFound";
+import AddLoan from "./components/loans/AddLoan";
+import UserLoans from "./components/loans/UserLoans";
+import AllLoans from "./components/loans/AllLoans";
+import BookLoans from "./components/loans/BookLoans";
+import ReturnBook from "./components/loans/ReturnBook";
 import './styles.css'
 
 const App = () => (
@@ -21,6 +26,11 @@ const App = () => (
                 <Route path="/users" element={<UsersPage/>}/>
                 <Route path="/users/add" element={<AddUser />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path="/loans/add-loan" element={<AddLoan />} />
+                <Route path="/loans/user-loans/:userId" element={<UserLoans />} />
+                <Route path="/loans/all-loans" element={<AllLoans />} />
+                <Route path="/loans/book-loans/:bookId" element={<BookLoans />} />
+                <Route path="/loans/return-book/:bookId" element={<ReturnBook />} />
             </Routes>
         </Router>
     </AuthProvider>

@@ -28,7 +28,7 @@ const Signup = () => {
             />
             <input
                 type="password"
-                placeholder="Hasło"
+                placeholder="Password"
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
                 required
@@ -38,11 +38,11 @@ const Signup = () => {
                 onChange={(e) => setFormData({...formData, role: e.target.value})}
                 required
             >
-                <option value="Reader">Czytelnik</option>
-                <option value="Librarian">Bibliotekarz</option>
+                <option value="Reader">Reader</option>
+                <option value="Librarian">Librarian</option>
                 <option value="Admin">Admin</option>
             </select>
-            <button type="submit">Zarejestruj</button>
+            <button type="submit">Register</button>
             <p>{message}</p>
         </form>
     );

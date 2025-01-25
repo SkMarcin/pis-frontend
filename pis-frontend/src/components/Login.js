@@ -26,7 +26,7 @@ const Login = () => {
             navigate('/dashboard');
         } catch (error) {
             console.error('Login failed:', error.response?.data?.message || 'Unknown error');
-            setErrorMessage(error.response?.data?.message || 'Błędny login lub hasło');
+            setErrorMessage(error.response?.data?.message || 'Invalid login or password.');
         }
     };
 
@@ -41,14 +41,14 @@ const Login = () => {
             />
             <input
                 type="password"
-                placeholder="Hasło"
+                placeholder="Password"
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
                 required
             />
-            <button type="submit">Zaloguj</button>
+            <button type="submit">Log in</button>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
-            <p><a href="/signup">Zarejestruj użytkownika</a></p>
+            <p><a href="/signup">Register User</a></p>
         </form>
     );
 };
