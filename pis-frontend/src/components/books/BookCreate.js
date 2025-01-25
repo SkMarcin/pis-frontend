@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BookCreate.css';
+import { Link } from 'react-router-dom';
 
 const BookCreate = () => {
     const [title, setTitle] = useState('');
@@ -66,6 +67,7 @@ const BookCreate = () => {
 
     return (
         <form className="create-book-form" onSubmit={handleSubmit}>
+
             <h2>Create New Book</h2>
 
             <label htmlFor="title">Title</label>
@@ -123,7 +125,11 @@ const BookCreate = () => {
                 </div>
             </fieldset>
 
-            <button type="submit">Create Book</button>
+            <div className="bottom_buttons">
+                <Link to="/books" className="create-link">Return to books</Link>
+                <button type="submit">Create Book</button>
+            </div>
+
         </form>
     );
 };

@@ -75,6 +75,14 @@ const BooksList = () => {
                 <Link to="/books/create" className="create-link">Create a New Book</Link>
             )}
 
+            {user && (user.role === 'ADMIN' || user.role === 'LIBRARIAN') && (
+                <Link to="/categories" className="create-link">Manage categories</Link>
+            )}
+
+            {user && (user.role === 'ADMIN' || user.role === 'LIBRARIAN') && (
+                <Link to="/authors" className="create-link">Manage authors</Link>
+            )}
+
             <div className="filters">
                 <input
                     type="text"
