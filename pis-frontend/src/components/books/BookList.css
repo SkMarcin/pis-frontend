@@ -38,7 +38,8 @@
     outline: none;
 }
 
-h1, h2 {
+.books-list-container h1,
+.books-list-container h2 {
     color: #333;
     text-align: center;
     margin-bottom: 20px;

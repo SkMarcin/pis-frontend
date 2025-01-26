@@ -105,7 +105,7 @@ const BookCreate = () => {
             </select>
 
             <fieldset>
-                <legend>Authors</legend>
+                <label>Authors</label>
                 <div className="author-container">
                     <div className="author-checkbox-container">
                         {authors.map((author) => (
@@ -126,8 +126,8 @@ const BookCreate = () => {
             </fieldset>
 
             <div className="bottom_buttons">
-                <Link to="/books" className="create-link">Return to books</Link>
-                <button type="submit">Create Book</button>
+                <button className="return-button" type="button" onClick={() => navigate('/books')}>Return to books</button>
+                <button className="add-button" type="submit">Create Book</button>
             </div>
 
         </form>

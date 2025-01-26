@@ -52,7 +52,7 @@ const CategoriesList = () => {
         <div className="categories-list-container">
             <h1>Categories List</h1>
 
-            <Link to="/books" className="create-link">Return to books</Link>
+            <Link to="/books" className="return-button">Return to books</Link>
 
             {user && (user.role === 'ADMIN' || user.role === 'LIBRARIAN') && (
                 <Link to="/categories/create" className="create-link">Create a New Category</Link>
