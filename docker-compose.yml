@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: ./pis-frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - shared-network
+
+
+networks:
+  shared-network:
+    external: true

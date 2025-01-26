@@ -1,0 +1,33 @@
+.users-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.users-page th, .users-page td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.users-page th {
+    background-color: #6200ea;
+    color: white;
+}
+
+.users-page td {
+    background-color: white;
+}
+
+.users-page .delete-btn {
+    background-color: #e53935;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.users-page .delete-btn:hover {
+    background-color: #c62828;
+}
