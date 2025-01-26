@@ -1,0 +1,73 @@
+/* General container styling */
+.book-loans-container {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.book-loans-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Empty message styling */
+.empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Loans list styling */
+.loans-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.loan-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.2s ease;
+}
+
+.loan-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loan-detail {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.loan-detail strong {
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .loan-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .loan-detail {
+        font-size: 0.9rem;
+    }
+}

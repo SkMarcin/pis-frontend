@@ -12,7 +12,7 @@ const AddUser = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:8180/api/users', {
+        const response = await fetch('http://localhost:80/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const AddUser = () => {
             />
             <input
                 type="password"
-                placeholder="Hasło"
+                placeholder="Password"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
@@ -49,11 +49,11 @@ const AddUser = () => {
                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                 required
             >
-                <option value="Reader">Czytelnik</option>
-                {user.role === "Admin" && <option value="Librarian">Bibliotekarz</option>}
+                <option value="Reader">Reader</option>
+                {user.role === "Admin" && <option value="Librarian">Librarian</option>}
                 {user.role === "Admin" && <option value="Admin">Admin</option>}
             </select>
-            <button type="submit">Dodaj użytkownika</button>
+            <button type="submit">Add User</button>
         </form>
     );
 
