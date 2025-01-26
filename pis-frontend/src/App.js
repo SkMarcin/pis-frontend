@@ -14,12 +14,14 @@ import AllLoans from "./components/loans/AllLoans";
 import BookLoans from "./components/loans/BookLoans";
 import ReturnBook from "./components/loans/ReturnBook";
 import './styles.css'
+import { Navigate } from 'react-router-dom';
 
 const App = () => (
     <AuthProvider>
         <Router>
             <Navigation/>
             <Routes>
+                <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
