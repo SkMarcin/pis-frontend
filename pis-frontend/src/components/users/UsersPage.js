@@ -23,7 +23,7 @@ const UsersPage = () => {
                     const data = await response.json();
                     if (!data || data.length === 0) {
                         console.warn("No loans found for the given Book ID.");
-                        setUsers({}); // Set to an empty array if no data is found
+                        setUsers([]); // Set to an empty array if no data is found
                     } else {
                         setUsers(data); // Set the loans if data is valid
                     }
