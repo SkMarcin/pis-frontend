@@ -21,7 +21,7 @@ const Navigation = () => {
                         {user.role !== "Reader" && (
                             <Link to="/users" className="nav-btn">Users</Link>
                         )}
-                        <Link to="/loans" className="nav-btn">Loans</Link>
+                        <Link to="/loans/all-loans" className="nav-btn">Loans</Link>
                         <Link to="/ksiegozbior" className="nav-btn">Books</Link>
                         </>
                     ) : null}

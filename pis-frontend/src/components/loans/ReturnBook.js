@@ -4,11 +4,15 @@ import { useParams } from "react-router-dom";
 const ReturnBook = () => {
     const { bookId } = useParams();
     const [message, setMessage] = React.useState("");
+    const token = localStorage.getItem('token');
 
     const handleReturn = async () => {
         try {
             const response = await fetch(`http://localhost:80/api/loans-api/return/${bookId}`, {
-                method: "POST",
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
             });
             if (response.ok) {
                 setMessage("Book returned successfully!");
