@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const AddLoan = () => {
     const [formData, setFormData] = useState({
-        user_id: "",
-        book_id: "",
-        date_from: "",
-        date_to: "",
+        userId: "",
+        bookId: "",
+        dateFrom: "",
+        dateTo: "",
     });
     const [message, setMessage] = useState("");
     const token = localStorage.getItem("token");
@@ -23,7 +23,7 @@ const AddLoan = () => {
             });
             if (response.ok) {
                 setMessage("Loan added successfully!");
-                setFormData({ user_id: "", book_id: "", date_from: "", date_to: "" });
+                setFormData({ userId: "", bookId: "", dateFrom: "", dateTo: "" });
             } else {
                 setMessage("Failed to add loan.");
             }
@@ -39,29 +39,29 @@ const AddLoan = () => {
                 <input
                     type="text"
                     placeholder="User ID"
-                    value={formData.user_id}
-                    onChange={(e) => setFormData({ ...formData, user_id: e.target.value })}
+                    value={formData.userId}
+                    onChange={(e) => setFormData({ ...formData, userId: e.target.value })}
                     required
                 />
                 <input
                     type="text"
                     placeholder="Book ID"
-                    value={formData.book_id}
-                    onChange={(e) => setFormData({ ...formData, book_id: e.target.value })}
+                    value={formData.bookId}
+                    onChange={(e) => setFormData({ ...formData, bookId: e.target.value })}
                     required
                 />
                 <input
                     type="date"
                     placeholder="Date From"
-                    value={formData.date_from}
-                    onChange={(e) => setFormData({ ...formData, date_from: e.target.value })}
+                    value={formData.dateFrom}
+                    onChange={(e) => setFormData({ ...formData, dateFrom: e.target.value })}
                     required
                 />
                 <input
                     type="date"
                     placeholder="Date To"
-                    value={formData.date_to}
-                    onChange={(e) => setFormData({ ...formData, date_to: e.target.value })}
+                    value={formData.dateTo}
+                    onChange={(e) => setFormData({ ...formData, dateTo: e.target.value })}
                     required
                 />
                 <button type="submit">Add Loan</button>
