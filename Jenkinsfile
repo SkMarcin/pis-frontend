@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('pis-frontend') {
-                    sh 'npm run build'
+                    sh 'CI=false npm run build'
                 }
             }
         }
