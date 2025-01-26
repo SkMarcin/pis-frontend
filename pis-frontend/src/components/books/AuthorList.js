@@ -52,7 +52,7 @@ const AuthorsList = () => {
         <div className="authors-list-container">
             <h1>Authors List</h1>
 
-            <Link to="/books" className="create-link">Return to books</Link>
+            <Link to="/books" className="return-button">Return to books</Link>
 
             {user && (user.role === 'ADMIN' || user.role === 'LIBRARIAN') && (
                 <Link to="/authors/create" className="create-link">Create a New Author</Link>

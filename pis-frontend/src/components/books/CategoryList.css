@@ -8,6 +8,12 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
+.categories-list-container h1{
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
