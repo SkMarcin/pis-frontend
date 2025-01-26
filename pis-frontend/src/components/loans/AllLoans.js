@@ -116,7 +116,7 @@ const AllLoans = () => {
                             <td>{loan.dateTo}</td>
                             <td>{loan.returnDate ? loan.returnDate : (
                                 <button
-                                    className="return-button"
+                                    className="return-loan-button"
                                     onClick={() => handleReturnBook(loan.book.bookId)}
                                 >
                                     Return

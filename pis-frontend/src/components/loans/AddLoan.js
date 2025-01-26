@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './AddLoan.css'
 
 const AddLoan = () => {
     const [formData, setFormData] = useState({
@@ -70,13 +71,13 @@ const AddLoan = () => {
 
     return (
         <div className="form-container">
-            <h2>Add Loan</h2>
+            <h2 className="form-title">Add Loan</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="User ID"
                     value={formData.userId}
-                    onChange={(e) => setFormData({...formData, userId: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, userId: e.target.value })}
                     required
                     className="form-input"
                 />
@@ -86,12 +87,13 @@ const AddLoan = () => {
                         placeholder="Search for a book by title"
                         value={searchTerm}
                         onChange={handleSearch}
+                        className="form-input"
                     />
                     <ul className="book-list">
                         {filteredBooks.map((book) => (
                             <li
                                 key={book.id}
-                                onClick={() => setFormData({...formData, bookId: book.id})}
+                                onClick={() => setFormData({ ...formData, bookId: book.id })}
                                 className={`book-item ${formData.bookId === book.id ? "selected" : ""}`}
                             >
                                 {book.title}
@@ -103,19 +105,21 @@ const AddLoan = () => {
                     type="date"
                     placeholder="Date From"
                     value={formData.dateFrom}
-                    onChange={(e) => setFormData({...formData, dateFrom: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, dateFrom: e.target.value })}
                     required
+                    className="form-input"
                 />
                 <input
                     type="date"
                     placeholder="Date To"
                     value={formData.dateTo}
-                    onChange={(e) => setFormData({...formData, dateTo: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, dateTo: e.target.value })}
                     required
+                    className="form-input"
                 />
-                <button type="submit">Add Loan</button>
+                <button type="submit" className="form-submit-button">Add Loan</button>
             </form>
-            {message && <p>{message}</p>}
+            {message && <p className="form-message">{message}</p>}
         </div>
     );
 };
