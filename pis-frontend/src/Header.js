@@ -18,7 +18,7 @@ const Navigation = () => {
                 <div className="nav-buttons">
                     {user ? (
                         <>
-                        {user.role !== "Reader" && (
+                        {user.role !== "READER" && (
                             <Link to="/users" className="nav-btn">Users</Link>
                         )}
                         <Link to="/loans/all-loans" className="nav-btn">Loans</Link>
